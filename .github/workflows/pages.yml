@@ -1,0 +1,32 @@
+name: download current json and push html to pages
+
+on:
+  push:
+    branches: [ "main" ]
+  schedule:
+  - cron: "0 2 * * 3"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: download current json
+        run: |
+          wget https://xx1.the-west.net/cache/items_en_DK.json
+      
+      - name: create artifact folder
+        run: |
+          mkdir output
+          cp *.json output/
+          cp *.js output/
+          cp *.html output/
+            
+      - uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
