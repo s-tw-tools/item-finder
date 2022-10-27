@@ -2,7 +2,7 @@ name: download current json and push html to pages
 
 on:
   push:
-    branches: [ "main", "initial-page" ]
+    branches: [ "main" ]
   schedule:
   - cron: "0 2 * * 3"
   workflow_dispatch:
