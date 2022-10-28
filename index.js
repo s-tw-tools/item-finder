@@ -24,10 +24,9 @@ let DataStorage = (function(){
       }
     };
 })();
+DataStorage.getDataStorage();
 function sortItemsBySkill(skillName){
     DataStorage.getDataStorage().data.sort(function(a,b){
-	    console.log(a)
-	    console.log(b)
 	    let valueOfA = a.bonus.item.find(function(bonusItem){
 		    if(bonusItem.bonus != undefined)
 		        return(bonusItem.bonus.name == skillName)
