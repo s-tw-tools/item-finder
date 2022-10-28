@@ -23,4 +23,19 @@ let DataStorage = (function(){
         return instance;
       }
     };
-  })();
+})();
+function sortItemsBySkill(skillName){
+    DataStorage.getDataStorage().data.sort(function(a,b){
+	    console.log(a)
+	    console.log(b)
+	    let valueOfA = a.bonus.item.find(function(bonusItem){
+		    if(bonusItem.bonus != undefined)
+		        return(bonusItem.bonus.name == skillName)
+	    })
+	    let valueOfB = b.bonus.item.find(function(bonusItem){
+		    if(bonusItem.bonus != undefined)
+		        return(bonusItem.bonus.name == skillName)
+	    })
+	    return ((valueOfA == undefined) ? 0 : valueOfA.bonus.value) - ((valueOfB == undefined) ? 0 : valueOfB.bonus.value); 
+    }).reverse()
+}
