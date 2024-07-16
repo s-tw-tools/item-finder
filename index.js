@@ -7,7 +7,7 @@ let DataStorage = (function(){
         };
         
         this.sortItemsBySkill = function(skillName){
-            return this.data.sort(function(a,b){
+            this.data = this.data.sort(function(a,b){
                 let valueOfA = a.bonus.item.find(function(bonusItem){
                     if(bonusItem.bonus != undefined)
                         return(bonusItem.bonus.name == skillName)
@@ -18,6 +18,7 @@ let DataStorage = (function(){
                 })
                 return ((valueOfA == undefined) ? 0 : valueOfA.bonus.value) - ((valueOfB == undefined) ? 0 : valueOfB.bonus.value); 
             }).reverse()
+            return this.data;
         }
   
         fetch("https://s-tw-tools.github.io/item-finder/items_en_DK.json", requestOptions)
