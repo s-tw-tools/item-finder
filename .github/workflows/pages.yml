@@ -17,6 +17,7 @@ jobs:
       - name: download current json
         run: |
           wget https://xx1.the-west.net/cache/items_en_DK.json
+          wget https://xx1.the-west.net/cache/itemsets_en_DK.json
       
       - name: create artifact folder
         run: |
