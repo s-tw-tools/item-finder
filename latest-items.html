@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <script>
+      (async function(){
+        let request = await fetch("https://s-tw-tools.github.io/item-finder/items_en_DK.json")
+        let data = await request.json();
+        
+          
+        let str = JSON.stringify(data.slice(data.length - 75), null, 2);
+        document.body.innerText = str;
+      })()
+    </script>
+  
+  </head>
+  <body>
+    
+  </body>
+</html>
