@@ -6,7 +6,7 @@
         let data = await request.json();
         
           
-        let str = JSON.stringify(data.slice(15), null, 2);
+        let str = JSON.stringify(data.slice(data.length - 15), null, 2);
         document.body.innerText = str;
       })()
     </script>
