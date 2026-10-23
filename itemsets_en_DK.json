@@ -1,77 +1,97 @@
 <!DOCTYPE html>
-<html data-bs-theme="light">
+<html lang="en" data-theme="light">
 <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>InnoGames Account Management</title>
-    <link rel="stylesheet" type="text/css" href="/bundles/public/public.css?6429cc250ba0c15be1dd9c745f357187"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <script type="text/javascript" src="/bundles/public/public.js?e2b5f0f355baa1bf3c533fc3367b0a89"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link rel="preload" as="image" href="/img/bg/bg10.jpg" fetchpriority="high"/>
+    <link rel="stylesheet" type="text/css" href="/bundles/public/public.css?992b6787b11b2494e28ca39672110277"/>
+    <script type="text/javascript" src="/bundles/public/public.js?3801642595ae66d00dcd3acb0939848f"></script>
 </head>
 
-<body class="bg3">
-    <div class="login-container">
-        <div class="middle-box loginscreen">
-            <div class="auth-logo">
-                <img src="/img/logo_innogames_straight_400.png" class="img-fluid" />
+<body>
+    <div class="login-page">
+        <div class="login-art" style="background-image: url(/img/bg/bg10.jpg)" aria-hidden="true"></div>
+
+        <main class="login-card">
+            <div class="login-badge" aria-hidden="true">
+                <div class="login-badge-inner">
+                                            <img class="login-badge-bulb" src="/img/logo_bulb.png" alt="" width="40" height="31"/>
+                                    </div>
             </div>
 
-            <h5 class="text-center auth-title">
-             Login to West XX Market    </h5>
+            <img class="login-wordmark" src="/img/logo_innogames_wordmark.png" alt="InnoGames" width="329" height="51"/>
+
+            <div class="login-flow" data-step="credentials">
+
+
+<div class="login-heading step-credentials">
+    <p class="login-kicker">Continue to</p>
+    <h1 class="login-title">West XX Market</h1>
+</div>
+<div class="login-heading step-code">
+    <h1 class="login-title">Verify it's you</h1>
+    <p class="login-lede">Enter the code from your authenticator app to continue to West XX Market.</p>
+</div>
 
 <div class="error-display" style="display: none">
-    <div class="error-display alert alert-danger mt-4 p-2 d-flex align-items-center">
-        <i class="fa fa-exclamation-triangle me-2"></i>
+    <div class="banner banner--error" role="alert">
         <span class="error-msg"></span>
     </div>
 </div>
 
-<form class="mt-4" action="#" id="login_form" method="post">
-            <div class="mb-3 primary-authentication">
-            <input type="text" name="username" class="form-control" placeholder="Username" required autocomplete="username"
+<form class="form" action="#" id="login_form" method="post">
+            <div class="field step-credentials">
+            <label for="login_username">Username</label>
+            <input type="text" id="login_username" name="username" class="input" required autocomplete="username"
                    autofocus />
         </div>
-        <div class="mb-3 primary-authentication">
-            <input type="password" name="password" class="form-control" placeholder="Password" required autocomplete="current-password" />
+        <div class="field step-credentials">
+            <label for="login_password">Password</label>
+            <input type="password" id="login_password" name="password" class="input" required autocomplete="current-password" />
         </div>
-        <div class="mb-3 secondary-authentication" style="display: none">
-            <input type="text" name="code" class="form-control" placeholder="Enter two factor code" readonly required
-                   autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]{6,10}" title="Please enter your 6-10 digit numeric code." minlength="6" maxlength="10" />
+    
+            <div class="field step-code">
+            <label for="login_code">Authentication code</label>
+            <input type="text" id="login_code" name="code" class="input input--code" placeholder="123456" required
+                   autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]{6,10}" title="Please enter your 6-10 digit numeric code." minlength="6" maxlength="10"
+                   readonly />
         </div>
-        <div class="secondary-authentication" style="display: none">
-            <div class="form-check mb-3">
-                <input type="checkbox" name="remember_browser" id="remember_browser" value="1" class="form-check-input" >
-                <label for="remember_browser" class="form-check-label">
-                    <span data-tooltip="You will not be prompted for two factor security on this browser for the next 30 days, even if your IP Address changes.">
-                        Remember browser for 30 days <i class="fa fa-question-circle"></i>
-                    </span>
-                </label>
-            </div>
-        </div>
-        <input type="hidden" name="session_id" />
+                    <label class="check step-code" for="remember_browser">
+                <input type="checkbox" name="remember_browser" id="remember_browser" value="1">
+                <span>
+                    Remember this browser for 30 days
+                    <small>You won't be asked for a code on this browser again, even if your IP address changes.</small>
+                </span>
+            </label>
+                <input type="hidden" name="session_id" />
         <input type="hidden" name="public_key" />
     
-    <div class="w-100 d-flex mb-3">
-        <button type="submit" class="btn btn-primary flex-grow-1 login-button" >
-            Log in        </button>
+    <div class="form-actions">
+        <button type="submit" class="btn login-button" >
+            <span class="btn-label step-credentials">Sign in</span>
+            <span class="btn-label step-code">Verify</span>
+            <span class="btn-busy"><span class="spinner" aria-hidden="true"></span><span class="btn-busy-text"></span></span>
+        </button>
 
-                <button type="button" class="btn btn-primary key-button ms-2" data-tooltip="Log in with a security key">
-            <i class="fa fa-key text-warning"></i>
+                <button type="button" class="btn-key key-button" aria-label="Sign in with a security key">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"></path></svg>
         </button>
             </div>
 
-    <div class="text-center">
-            <a href="/recovery">
-            <small>Forgot password?</small>
-        </a>
+    <div class="form-links">
+            <a href="/recovery">Forgot your password?</a>
         </div>
 </form>
+
+</div>
 
 <script>
     $(function () {
         Login.init(false);
     });
 </script>
-        </div>
+        </main>
     </div>
 </body>
 </html>
