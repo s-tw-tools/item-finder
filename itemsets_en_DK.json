@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>InnoGames Account Management</title>
     <link rel="preload" as="image" href="/img/bg/bg2.jpg" fetchpriority="high"/>
-    <link rel="stylesheet" type="text/css" href="/bundles/public/public.css?992b6787b11b2494e28ca39672110277"/>
-    <script type="text/javascript" src="/bundles/public/public.js?3801642595ae66d00dcd3acb0939848f"></script>
+    <link rel="stylesheet" type="text/css" href="/bundles/public/public.css?2ae0c02b2b9f9b7da11f13d4b7b46470"/>
+    <script type="text/javascript" src="/bundles/public/public.js?075643536efe4c4077d1ffc206adbbe8"></script>
 </head>
 
 <body>
@@ -31,8 +31,8 @@
 </div>
 <div class="login-heading step-code">
     <h1 class="login-title">Verify it's you</h1>
-    <p class="login-lede">Enter the code from your authenticator app to continue to West XX Market.</p>
-</div>
+            <p class="login-lede">Enter the code from your authenticator app to continue to West XX Market.</p>
+    </div>
 
 <div class="error-display" style="display: none">
     <div class="banner banner--error" role="alert">
@@ -51,13 +51,14 @@
             <input type="password" id="login_password" name="password" class="input" required autocomplete="current-password" />
         </div>
     
-            <div class="field step-code">
+    
+                    <div class="field step-code">
             <label for="login_code">Authentication code</label>
             <input type="text" id="login_code" name="code" class="input input--code" placeholder="123456" required
                    autocomplete="one-time-code" inputmode="numeric" pattern="[0-9]{6,10}" title="Please enter your 6-10 digit numeric code." minlength="6" maxlength="10"
                    readonly />
         </div>
-                    <label class="check step-code" for="remember_browser">
+                            <label class="check step-code" for="remember_browser">
                 <input type="checkbox" name="remember_browser" id="remember_browser" value="1">
                 <span>
                     Remember this browser for 30 days
