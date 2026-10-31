@@ -4,14 +4,14 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>InnoGames Account Management</title>
-    <link rel="preload" as="image" href="/img/bg/bg7.jpg" fetchpriority="high"/>
+    <link rel="preload" as="image" href="/img/bg/bg4.jpg" fetchpriority="high"/>
     <link rel="stylesheet" type="text/css" href="/bundles/public/public.css?2ae0c02b2b9f9b7da11f13d4b7b46470"/>
     <script type="text/javascript" src="/bundles/public/public.js?075643536efe4c4077d1ffc206adbbe8"></script>
 </head>
 
 <body>
     <div class="login-page">
-        <div class="login-art" style="background-image: url(/img/bg/bg7.jpg)" aria-hidden="true"></div>
+        <div class="login-art" style="background-image: url(/img/bg/bg4.jpg)" aria-hidden="true"></div>
 
         <main class="login-card">
             <div class="login-badge" aria-hidden="true">
